@@ -1,0 +1,24 @@
+CHIP RoundToPow {
+	IN in[16];
+	OUT out[16];
+
+    PARTS:
+
+    Mux16(a = false, b[0] = true, sel = in[0], out = rez1);
+    Mux16(a = rez1, b[1] = true, sel = in[1], out = rez2);
+    Mux16(a = rez2, b[2] = true, sel = in[2], out = rez3);
+    Mux16(a = rez3, b[3] = true, sel = in[3], out = rez4);
+    Mux16(a = rez4, b[4] = true, sel = in[4], out = rez5);
+    Mux16(a = rez5, b[5] = true, sel = in[5], out = rez6);
+    Mux16(a = rez6, b[6] = true, sel = in[6], out = rez7);
+    Mux16(a = rez7, b[7] = true, sel = in[7], out = rez8);
+    Mux16(a = rez8, b[8] = true, sel = in[8], out = rez9);
+    Mux16(a = rez9, b[9] = true, sel = in[9], out = rez10);
+    Mux16(a = rez10, b[10] = true, sel = in[10], out = rez11);
+    Mux16(a = rez11, b[11] = true, sel = in[11], out = rez12);
+    Mux16(a = rez12, b[12] = true, sel = in[12], out = rez13);
+    Mux16(a = rez13, b[13] = true, sel = in[13], out = rez14);
+    Mux16(a = rez14, b[14] = true, sel = in[14], out = rez15);
+    Mux16(a = rez15, b[15] = true, sel = in[15], out = out);  
+}
+

@@ -1,0 +1,39 @@
+CHIP Clz {
+    IN in[16];
+    OUT out[16];
+
+    PARTS:
+    Mux(a = true, b = false, sel = in[15], out = ck15);
+    Mux(a = ck15, b = false, sel = in[14], out = ck14);
+    Mux(a = ck14, b = false, sel = in[13], out = ck13);
+    Mux(a = ck13, b = false, sel = in[12], out = ck12);
+    Mux(a = ck12, b = false, sel = in[11], out = ck11);
+    Mux(a = ck11, b = false, sel = in[10], out = ck10);
+    Mux(a = ck10, b = false, sel = in[9], out = ck9);
+    Mux(a = ck9, b = false, sel = in[8], out = ck8);
+    Mux(a = ck8, b = false, sel = in[7], out = ck7);
+    Mux(a = ck7, b = false, sel = in[6], out = ck6);
+    Mux(a = ck6, b = false, sel = in[5], out = ck5);
+    Mux(a = ck5, b = false, sel = in[4], out = ck4);
+    Mux(a = ck4, b = false, sel = in[3], out = ck3);
+    Mux(a = ck3, b = false, sel = in[2], out = ck2);
+    Mux(a = ck2, b = false, sel = in[1], out = ck1);
+    Mux(a = ck1, b = false, sel = in[0], out = ck0);
+    
+    Add16(a = false, b[0] = ck15, out = ct15);
+    Add16(a = ct15, b[0] = ck14, out = ct14);
+    Add16(a = ct14, b[0] = ck13, out = ct13);
+    Add16(a = ct13, b[0] = ck12, out = ct12);
+    Add16(a = ct12, b[0] = ck11, out = ct11);
+    Add16(a = ct11, b[0] = ck10, out = ct10);
+    Add16(a = ct10, b[0] = ck9, out = ct9);
+    Add16(a = ct9, b[0] = ck8, out = ct8);
+    Add16(a = ct8, b[0] = ck7, out = ct7);
+    Add16(a = ct7, b[0] = ck6, out = ct6);
+    Add16(a = ct6, b[0] = ck5, out = ct5);
+    Add16(a = ct5, b[0] = ck4, out = ct4);
+    Add16(a = ct4, b[0] = ck3, out = ct3);
+    Add16(a = ct3, b[0] = ck2, out = ct2);
+    Add16(a = ct2, b[0] = ck1, out = ct1);
+    Add16(a = ct1, b[0] = ck0, out = out);
+}
